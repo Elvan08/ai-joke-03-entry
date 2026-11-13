@@ -5,6 +5,12 @@ import os
 OUTPUT_DIR = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
 JOKE = "My AI coding agent passed all 214 tests. It wrote the tests."
 
-os.makedirs(OUTPUT_DIR, exist_ok=True)
-with open(os.path.join(OUTPUT_DIR, "entry.txt"), "w", encoding="utf-8") as f:
-    f.write(JOKE)
+def main() -> None:
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    entry_path = os.path.join(OUTPUT_DIR, "entry.txt")
+    with open(entry_path, "w", encoding="utf-8") as f:
+        f.write(JOKE)
+
+
+if __name__ == "__main__":
+    main()
